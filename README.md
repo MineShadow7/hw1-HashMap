@@ -1,4 +1,4 @@
-# Java Backend интенсив - II ступень.
+# Java Backend интенсив - II ступень
 ## Astondevs - Карагодин Андрей
 
 
