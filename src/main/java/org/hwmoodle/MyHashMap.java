@@ -52,6 +52,26 @@ public class MyHashMap<T, Y> {
         return null;
     }
 
+    public void remove(T key){
+        int index = getBucketIndex(key);
+        Node<T, Y> node = buckets[index];
+        Node<T, Y> prev = null;
+
+        while (node != null) {
+            if (node.key.equals(key)) {
+                if (prev == null) {
+                    buckets[index] = node.next;
+                } else {
+                    prev.next = node.next;
+                }
+                size--;
+                return;
+            }
+            prev = node;
+            node = node.next;
+        }
+    }
+
     public boolean containsKey(T key) {
         int index = getBucketIndex(key);
         Node<T, Y> node = buckets[index];
