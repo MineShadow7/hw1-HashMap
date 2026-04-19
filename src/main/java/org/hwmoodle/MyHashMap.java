@@ -90,6 +90,6 @@ public class MyHashMap<T, Y> {
     }
 
     private int getBucketIndex(T key) {
-        return key.hashCode() % buckets.length;
+        return Math.abs(key.hashCode() % buckets.length);
     }
 }
